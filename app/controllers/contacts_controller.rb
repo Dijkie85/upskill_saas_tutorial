@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
          flash[:success] = "Mensaje enviado. Muchas gracias."
          redirect_to new_contact_path
       else
-         #If Contact object doesn't save, store errors in flash-hash
+         # If Contact object doesn't save, store errors in flash-hash
          flash[:danger] = "Ocurrió un error: " + @contact.errors.full_messages.join(", ")
          redirect_to new_contact_path
       end
