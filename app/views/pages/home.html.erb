@@ -4,18 +4,22 @@
 </div>
 
 <div class="container text-center home-signup-links">
-  <div class="well">
+  
     <div class="row">
       <div class="col-md-6">
-        <h2> Registrarse en el Plan Básico</h2>
-        <h4> Acceso a la comunidad DevMatch</h4>
-        <%= link_to "Acceso Básico", "#", class: 'btn btn-primary btn-lg btn-block' %>
+        <div class="well">    
+          <h2> Registrarse en el Plan Básico</h2>
+          <h4> Acceso a la comunidad DevMatch</h4>
+          <%= link_to "Acceso Básico", new_user_registration_path(plan_id: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
       </div>
-      <div class="col-md-6">
-        <h2> Registrarse en el Plan Pro</h2>
-        <h4> Acceso a la comunidad DevMatch y datos de contacto</h4>
-        <%= link_to "Acceso Pro", "#", class: 'btn btn-success btn-lg btn-block' %>
+      </div>
+        <div class="col-md-6">
+          <div class="well">
+          <h2> Registrarse en el Plan Pro</h2>
+          <h4> Acceso a la comunidad DevMatch y datos de contacto</h4>
+          <%= link_to "Acceso Pro",new_user_registration_path(plan_id: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
+        </div>
       </div>
     </div>
-  </div>
+  
 </div>
