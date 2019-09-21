@@ -10,14 +10,14 @@
         <div class="well">    
           <h2> Registrarse en el Plan Básico</h2>
           <h4> Acceso a la comunidad DevMatch</h4>
-          <%= link_to "Acceso Básico", new_user_registration_path(plan_id: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+          <%= link_to "Acceso Básico", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
       </div>
       </div>
         <div class="col-md-6">
           <div class="well">
           <h2> Registrarse en el Plan Pro</h2>
           <h4> Acceso a la comunidad DevMatch y datos de contacto</h4>
-          <%= link_to "Acceso Pro",new_user_registration_path(plan_id: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
+          <%= link_to "Acceso Pro",new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
         </div>
       </div>
     </div>
