@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          
   belongs_to :plan
+  has_one :profile
   
   # Extend Devise user registrations so that pro users save with special stripe
   # Otherwise, Devise saves as usual
