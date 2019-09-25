@@ -4,23 +4,45 @@
 </div>
 
 <div class="container text-center home-signup-links">
-  
     <div class="row">
-      <div class="col-md-6">
-        <div class="well">    
-          <h2> Registrarse en el Plan Básico</h2>
-          <h4> Acceso a la comunidad DevMatch</h4>
-          <%= link_to "Acceso Básico", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
-      </div>
-      </div>
+      <% if user_signed_in? %>
         <div class="col-md-6">
           <div class="well">
-          <h2> Registrarse en el Plan Pro</h2>
-          <h4> Acceso a la comunidad DevMatch y datos de contacto</h4>
-          <%= link_to "Acceso Pro",new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
+            <h2 class="text-center">Tu perfil DevMatch</h2>    
+            <% if current_user.profile %>
+              <%= link_to "Editar perfil","#", class: 'btn btn-default btn-lg btn-block' %>
+              <%= link_to "Ver perfil", user_path(id: current_user.id), class: 'btn btn-default btn-lg btn-block' %>
+            <% else %>
+              <p>Crea tu perfil para contactar con la comunidad</p>
+              <%= link_to '¡Crea tu perfil!', new_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block' %>
+            <% end %>
+          </div>
         </div>
-      </div>
-    </div>
-    <%= link_to '¡Crea tu perfil!', new_user_profile_path(user_id: current_user.id) if user_signed_in?  %>
-  
+        <div class="col-md-6">
+          <div class="well">
+            <h2 class="text-center">Conocé la comunidad DevMatch</h2>
+            <p> Contactá con otros desarrolladores, emprendedores e inversores</p>
+            <%= link_to "Visitar la comunidad","#", class: 'btn btn-default btn-lg btn-block' %>
+          </div>
+        </div>
+    
+      <% else %>
+      
+        <div class="col-md-6">
+          <div class="well">    
+            <h2> Registrarse en el Plan Básico</h2>
+            <h4> Acceso a la comunidad DevMatch</h4>
+            <%= link_to "Acceso Básico", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+        </div>
+        </div>
+          <div class="col-md-6">
+            <div class="well">
+            <h2> Registrarse en el Plan Pro</h2>
+            <h4> Acceso a la comunidad DevMatch y datos de contacto</h4>
+            <%= link_to "Acceso Pro",new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
+          </div>
+        </div>
+      
+    <% end %>
+  </div>
 </div>
