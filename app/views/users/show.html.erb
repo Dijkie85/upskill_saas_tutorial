@@ -5,12 +5,12 @@
         </div>
         <div class="col-md-6">
             <h1><%= @user.profile.first_name %> <%= @user.profile.last_name %><br/></h1>
-            <h3><%= @user.profile.job_title %></h3><br/>
+            <h3><span class="job-title-icon"><%= job_title_icon %></span><%= @user.profile.job_title %></h3><br/>
             <div class="well profile-block profile-description">
                 <h3>Descripción</h3>
                 <%= @user.profile.description %>
             </div>
-            <% if true # current_user.plan_id == 2 %>
+            <% if current_user.plan_id == 2 %>
                 <div class="well profile-block profile-contact-info">
                     <h3>Información de contacto</h3>
                     <%= @user.profile.contact_email %><br/>
